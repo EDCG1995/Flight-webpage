@@ -1,5 +1,6 @@
 <?php
-class Card{
+class Card
+{
     //properties
     public $name;
     public $number;
