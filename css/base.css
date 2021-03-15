@@ -1,4 +1,45 @@
-header{
+header {
     display: flex;
     z-index: 0;
+}
+
+body {
+
+	/* Background Image */ 
+	background: url("Background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: sticky;
+
+	/* Text Color */
+	color: white;
+}
+
+.logo img {
+
+	/* Image URL */
+	background: url("Logo.png");
+	filter: invert(1);
+	height: 70px;
+	width: auto;
+}
+
+.header_title {
+	width: auto;
+	margin: auto;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	background: rgba(0, 0, 0, 0.30);
+}
+
+.COVID-notice {
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	padding: 10px 25px;
 }
