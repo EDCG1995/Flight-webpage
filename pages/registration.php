@@ -1,5 +1,6 @@
 <?php
 require '../layout/header.php';
+//Kelly, please do a form to create a new user.
 ?>
 
 
