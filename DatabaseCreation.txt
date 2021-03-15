@@ -1,0 +1,55 @@
+CREATE DATABASE flight;
+
+USE flight;
+CREATE TABLE `account` (
+	`username` VARCHAR(250) NOT NULL,
+	`password` VARCHAR(250) NOT NULL,
+	`email` VARCHAR(250) NOT NULL,
+	PRIMARY KEY (`email`),
+	UNIQUE INDEX `username` (`username`)
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+;
+
+USE flight;
+CREATE TABLE `card` (
+	`name` VARCHAR(50) NULL DEFAULT NULL,
+	`number` INT NULL DEFAULT NULL,
+	`expiration` VARCHAR(50) NULL DEFAULT NULL,
+	`csn` SMALLINT NULL DEFAULT NULL
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+;
+
+USE flight;
+CREATE TABLE `trip` (
+	`from` VARCHAR(50) NULL DEFAULT NULL,
+	`to` VARCHAR(50) NULL DEFAULT NULL,
+	`date` DATE NULL DEFAULT NULL,
+	`return_date` DATE NOT NULL,
+	`airline` DATE NOT NULL,
+	`airline_id` INT NOT NULL DEFAULT '0',
+	`class` VARCHAR(50) NOT NULL DEFAULT '0',
+	`price` DOUBLE NOT NULL DEFAULT '0',
+	`user` VARCHAR(50) NOT NULL DEFAULT '0'
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+;
+
+USE flight;
+CREATE TABLE `user` (
+	`name` VARCHAR(50) NOT NULL,
+	`last-name` VARCHAR(50) NOT NULL,
+	`user_n` INT NOT NULL AUTO_INCREMENT,
+	`address` VARCHAR(50) NOT NULL,
+	`country` VARCHAR(50) NOT NULL,
+	`passport_n` VARCHAR(50) NOT NULL,
+	`zip` VARCHAR(50) NOT NULL DEFAULT '',
+	PRIMARY KEY (`user_n`)
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+;
