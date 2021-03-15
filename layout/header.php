@@ -5,11 +5,19 @@
     <link href="../css/base.css" rel="stylesheet">
     </head>
     <body>
-        <header class="header">
-            <div class ="logo">'logo placeholder'</div>
-            <div class="header_title">About us</div>
-            <div class="header_title">Book a flight</div>
-            <div class="header_title">First class club</div>
-            <div class="header_title">Log in | Set up</div>
-            <div class="header_title">EN 'flag placeholder'</div>
-        </header>
+        
+    <p class="COVID-notice" style="background-image: url(covid.jpg)"> Stay Safe. Protect Each Other. 
+        <a style="font-size: 25px; font-weight: bold;">Download the COVID Tracker app Today.</a>
+    </p>
+
+    <header class ="header"> 
+    <div class="logo"> 
+    	<img src="Logo.png"> 
+	</div>
+
+    <div class="header_title">About Us</div>
+    <div class="header_title">Book a Flight</div>
+    <div class="header_title">First Class Club</div>
+    <div class="header_title">Account</div>
+    <div class="header_title">EN</div>
+        </header> 
