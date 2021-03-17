@@ -6,13 +6,13 @@
     </head>
     <body>
         
-    <p class="COVID-notice" style="background-image: url(covid.jpg)"> Stay Safe. Protect Each Other. 
+    <p class="COVID-notice" style="background-image: url(../images/covid.jpg)"> Stay Safe. Protect Each Other. 
         <a style="font-size: 25px; font-weight: bold;">Download the COVID Tracker app Today.</a>
     </p>
 
     <header class ="header"> 
     <div class="logo"> 
-    	<img src="Logo.png"> 
+    	<img src="../images/Logo.png"> 
 	</div>
 
     <div class="header_title">About Us</div>

@@ -6,7 +6,7 @@ header {
 body {
 
 	/* Background Image */ 
-	background: url("Background.png");
+	background: url(../images/Background.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: sticky;
@@ -18,7 +18,7 @@ body {
 .logo img {
 
 	/* Image URL */
-	background: url("Logo.png");
+	background: url(../images/Logo.png);
 	filter: invert(1);
 	height: 70px;
 	width: auto;
