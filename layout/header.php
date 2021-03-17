@@ -2,7 +2,8 @@
     <head>
     <meta charset="utf-8">
     <title>"Flight.ie: Because you deserve it"</title>
-    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/base.css" "../css/formstyle.css" rel="stylesheet">
+    <link href="../css/formstyle.css" rel="stylesheet">
     </head>
     <body>
         
@@ -18,6 +19,6 @@
     <div class="header_title">About Us</div>
     <div class="header_title">Book a Flight</div>
     <div class="header_title">First Class Club</div>
-    <div class="header_title">Account</div>
+    <div class="header_title"><a href="../pages/registration.php">Account</a></div>
     <div class="header_title">EN</div>
         </header> 
