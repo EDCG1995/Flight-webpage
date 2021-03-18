@@ -7,7 +7,7 @@ class Account
     public $password;
     
     //class constructor
-    function __construct($username, $email, $password)
+    function __construct($username, $password, $email)
     {
         $this->username = $username;
         $this->email = $email;
