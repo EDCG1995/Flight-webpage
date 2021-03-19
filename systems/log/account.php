@@ -3,8 +3,9 @@ class Account
 {
     //properties
     public $username;
-    public $email;
     public $password;
+    public $email;
+    
     
     //class constructor
     function __construct($username, $password, $email)

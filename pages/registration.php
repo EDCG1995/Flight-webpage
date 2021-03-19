@@ -1,6 +1,6 @@
 <?php
-require '../systems/log/account.php';
 require '../layout/header.php';
+require '../systems/log/account.php';
 require '../lib/functions.php';
 
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -24,8 +24,9 @@ require '../lib/functions.php';
         }else{
             $password = '';
         }
-        $newAccount = new Account($username, $password, $email );
-        set_account($newAccount);
+        $newAccount = new Account($username, $password, $email);
+        set_account($newAccount->username, $newAccount->password, $newAccount->email);
+        
 //            'username' => $username,
 //            'email' => $email,
 //            'password' => $password,
@@ -39,7 +40,7 @@ require '../lib/functions.php';
         <div class="col-xs-6">
             <h1>Create a new Account</h1>
             
-            <form action="/registration.php" method="POST">
+            <form action="registration.php" method="POST">
                 <div class="form-group">
                     <label for="Username" class="control-label">Username</label>
                     <input type="text" name="username" id="username" class="form-control"/>

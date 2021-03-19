@@ -2,15 +2,19 @@
 
 function get_connection(){
     $conf = require 'config.php';
-    $pdo = new PDO(
-        $conf['db_dsn'], 
-        $conf['db_user'],
-        $conf['db_pw']
-    );
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $pdo;
+    try{
+        $pdo = new PDO(
+            $conf['db_dsn'], 
+            $conf['db_user'],
+            $conf['db_pw']
+        );
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+        return $pdo;
+    }catch(PDOException $e){
+        echo 'Connection failed '.$e->getMessage();
+        return null;
+    }
 }
-
 function get_accounts()
 {
     $pdo = get_connection();
@@ -22,10 +26,9 @@ function get_accounts()
     return $accounts;
 }
 
-function set_account($newAccount){
+function set_account($user,$password,$email){
     $pdo = get_connection();
-    $query = 'insert into account(username, password, email) 
-    values ($newAccount->username, $newAccount->password, $newAccount->email)';
+    $query = "insert into account(username, password, email) values ('$user','$password','$email');";
     $stmt = $pdo->prepare($query);
     $stmt->execute();    
 }
@@ -91,3 +94,4 @@ function pets_to_save($newPet){
     file_put_contents('data/pets.json', $json);
 }
 */
+?>
