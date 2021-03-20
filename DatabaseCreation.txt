@@ -50,7 +50,7 @@ CREATE TABLE `user` (
 	`zip` VARCHAR(50) NOT NULL DEFAULT '',
 	`email` VARCHAR(250) NULL DEFAULT NULL,
 	PRIMARY KEY (`user_n`),
-	INDEX `FK_user_account` (`email`),
+	INDEX `F K_user_account` (`email`),
 	CONSTRAINT `FK_user_account` FOREIGN KEY (`email`) REFERENCES `account` (`email`)
 )
 COLLATE='utf8mb4_0900_ai_ci'
