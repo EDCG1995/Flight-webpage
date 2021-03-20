@@ -12,7 +12,12 @@ class User
     //class constructor
     function __construct($name, $last_name, $address, $country, $passport, $zip)
     {
-        $this->name = $name;
+        $this->name         = $name;
+        $this->last_name    = $last_name;
+        $this->address      = $address;
+        $this->country      = $country;
+        $this->passport     = $passport;
+        $this->zip          = $zip;
         
     }
 }

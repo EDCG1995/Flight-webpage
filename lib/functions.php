@@ -48,6 +48,13 @@ function get_users()
     $data = $stmt->fetchAll();
     return $data;
 }
+function set_user($name,$lastname,$address, $country, $passport, $zip, $email){
+    $pdo = get_connection();
+    $query = "insert into user(name, last_name, address, country, passport_n, zip, email) 
+                values ('$name','$lastname','$address','$country','$passport','$zip','$email');";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();    
+}
 
 function get_trips()
 {
