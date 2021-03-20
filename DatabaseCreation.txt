@@ -42,14 +42,18 @@ ENGINE=InnoDB
 USE flight;
 CREATE TABLE `user` (
 	`name` VARCHAR(50) NOT NULL,
-	`last-name` VARCHAR(50) NOT NULL,
+	`last_name` VARCHAR(50) NOT NULL,
 	`user_n` INT NOT NULL AUTO_INCREMENT,
 	`address` VARCHAR(50) NOT NULL,
 	`country` VARCHAR(50) NOT NULL,
 	`passport_n` VARCHAR(50) NOT NULL,
 	`zip` VARCHAR(50) NOT NULL DEFAULT '',
-	PRIMARY KEY (`user_n`)
+	`email` VARCHAR(250) NULL DEFAULT NULL,
+	PRIMARY KEY (`user_n`),
+	INDEX `FK_user_account` (`email`),
+	CONSTRAINT `FK_user_account` FOREIGN KEY (`email`) REFERENCES `account` (`email`)
 )
 COLLATE='utf8mb4_0900_ai_ci'
 ENGINE=InnoDB
+AUTO_INCREMENT=5
 ;
