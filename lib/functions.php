@@ -56,15 +56,16 @@ function set_user($name,$lastname,$address, $country, $passport, $zip, $email){
     $stmt->execute();    
 }
 
-function get_trips($trip)
+function get_trips()
 {
     $pdo = get_connection();
     
-    $query = 'SELECT * FROM trip where from_city = $trip and   ';
+    $query = 'SELECT * FROM trip';
     if($limit){
-        $query = $query;
+        $query = $query.' LIMIT :resultLimit';
     }
     $stmt = $pdo->prepare($query);
+    $stmt->bindParam('resultLimit', $limit, PDO::PARAM_INT);
     $stmt->execute();
     $data = $stmt->fetchAll();
     return $data;
@@ -84,6 +85,24 @@ function get_card()
     $data = $stmt->fetchAll();
     return $data;
 }
+
+function set_card($name,$number,$expiration,$csn){
+    $pdo = get_connection();
+    $query = "insert into card(name,number,expiration,csn) 
+                values ('$name','$number','$expiration','$csn');";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();    
+}
+
+
+
+
+
+
+
+
+
+
 /*
 function get_one_pet($id){
     $pdo = get_connection();
