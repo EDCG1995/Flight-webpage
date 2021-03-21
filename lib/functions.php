@@ -56,16 +56,15 @@ function set_user($name,$lastname,$address, $country, $passport, $zip, $email){
     $stmt->execute();    
 }
 
-function get_trips()
+function get_trips($trip)
 {
     $pdo = get_connection();
     
-    $query = 'SELECT * FROM trip';
+    $query = 'SELECT * FROM trip where from_city = $trip and   ';
     if($limit){
-        $query = $query.' LIMIT :resultLimit';
+        $query = $query;
     }
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam('resultLimit', $limit, PDO::PARAM_INT);
     $stmt->execute();
     $data = $stmt->fetchAll();
     return $data;

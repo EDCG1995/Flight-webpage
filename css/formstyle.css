@@ -2,6 +2,10 @@ form{
     align-content: center;
     background: rgba(0, 0, 0, 0.30);
 }
+.form{
+    align-content: center;
+    background: rgba(0, 0, 0, 0.30);
+}
 
 fieldset[disabled] .form-control {
   cursor: not-allowed;
