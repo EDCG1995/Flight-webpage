@@ -6,24 +6,16 @@ class Trip
 	// variable declaration
 	public $fromID;
     public $toID;
-	public $dateTime; 
-    public $dateReturnOptional; 
-    public $airlineID; 
+	public $dateTime;  
 	public $airlineClass;
-	public $flightPrice; 
-	public $personalData;
-
-	function __construct($fromID, $toID, $dateTime, $dateReturnOptional, $airlineID, $airlineClass, $flightPrice, $personalData) 
+	
+	function __construct($fromID, $toID, $dateTime,$airlineClass) 
     {
-	   $this->from = $fromID ['Departing Location'];
-	   $this->to = $toID ['Arriving Location'];
-	   $this->dateTime = $dateTime['Selected Date and Time']; 
-	   $this->dateReturnOptional = $dateReturnOptional ['Selected Option of Return']; 
-	   $this->airlineID = $airlineID ['Airline Selection']; 
-	   $this->airlineClass = $airlineClass ['Selected Class'];
-	   $this->flightPrice = $flightPrice ['Total Price of Flight']; 
-	   $this->personalData = $personalData ['Personal Data of Customer'];
-	} 
+	   $this->fromID = $fromID;
+	   $this->toID = $toID;
+	   $this->dateTime = $dateTime; 
+	   $this->airlineClass = $airlineClass;
+    } 
 	
 
     public function isRoundTrip() 

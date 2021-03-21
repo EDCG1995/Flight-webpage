@@ -2,6 +2,26 @@
 require 'layout/header.php';
 require 'lib/functions.php';
 require 'systems/booking/trip.php';
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $fromID;
+    $toID;
+    $date;
+    $class;
+    $tickets;
+    
+    isset($_POST['from'])   ? $fromID = $_POST['from']  : $fromID='';
+    isset($_POST['to'])     ? $toID = $_POST['to']      : $toID='';
+    isset($_POST['date'])   ? $date = $_POST['date']    : $dateID='';
+    isset($_POST['class'])  ? $class = $_POST['class']  : $class='';
+    isset($_POST['tickets'])? $tickets = $_POST['tickets'] : $tickets='';
+    
+    $lookTrip = new Trip($fromID, $toID, $date, $class);
+    var_dump($lookTrip);
+    die;
+    
+}
+
 ?>
 <div class="container">
     <div class="row">

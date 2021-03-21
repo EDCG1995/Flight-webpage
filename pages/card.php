@@ -41,7 +41,7 @@ require '../lib/functions.php';
     set_card($newCard->name,$newCard->number,$newCard->expiration,$newCard->csn);
 
 	?>
- Card has been added Succesfully!</h1>
+ <h1>Card has been added Succesfully!</h1>
 <?php
  }
 

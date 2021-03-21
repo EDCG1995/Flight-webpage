@@ -17,59 +17,19 @@ require '../lib/functions.php';
     $zip;
 
     //Account creation.
-    if(isset($_POST['username'])){
-    $username = $_POST['username'];
-    }else{
-        $username = '';
-    }
-
-    if(isset($_POST['email'])){
-        $email = $_POST['email'];
-    }else{
-        $email = '';
-    }
-
-    if(isset($_POST['password'])){
-        $password = $_POST['password'];
-    }else{
-        $password = '';
-    }
+    isset($_POST['username'])   ? $username = $_POST['username'] : $username = '';
+    isset($_POST['email'])      ? $email = $_POST['email']       : $email = '';
+    isset($_POST['password'])   ? $password = $_POST['password'] : $password = '';
     $newAccount = new Account($username, $password, $email);
     set_account($newAccount->username, $newAccount->password, $newAccount->email);
 
     //User Creation
-    if(isset($_POST['name'])){
-        $name = $_POST['name'];
-    }else{
-        $name = '';
-    }
-
-    if(isset($_POST['lastname'])){
-        $last_name = $_POST['lastname'];
-    }else{
-        $last_name = '';
-    }
-
-    if(isset($_POST['address'])){
-        $address = $_POST['address'];
-    }else{
-        $address = '';
-    }
-    if(isset($_POST['country'])){
-        $country = $_POST['country'];
-    }else{
-        $country = '';
-    }
-    if(isset($_POST['passport'])){
-        $passport = $_POST['passport'];
-    }else{
-        $passport = '';
-    }
-     if(isset($_POST['zip'])){
-        $zip = $_POST['zip'];
-    }else{
-        $zip = '';
-    }
+    isset($_POST['name'])       ? $name = $_POST['name'] : $name = '';
+    isset($_POST['lastname'])   ? $last_name = $_POST['lastname'] : $last_name = '';
+    isset($_POST['address'])    ? $address = $_POST['address'] : $address = '';
+    isset($_POST['country'])    ? $country = $_POST['country'] : $country = '';
+    isset($_POST['passport'])   ? $passport = $_POST['passport'] : $passport = '';
+    isset($_POST['zip'])        ? $zip = $_POST['zip']  : $zip = '';
 
     $newUser = new User($name, $last_name, $address, $country, $passport, $zip);
     set_user($newUser->name, $newUser->last_name, $newUser->address, $newUser->country, $newUser->passport, $newUser->zip, $newAccount->email);
