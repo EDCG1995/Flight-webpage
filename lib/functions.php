@@ -60,7 +60,7 @@ function get_trips($fromID, $toID)
 {
     $pdo = get_connection();
     
-     $query = "SELECT * FROM trip where from_city = '$fromID'' and to_city = '$toID';";
+     $query = "SELECT * FROM trip where from_city = '$fromID' and to_city = '$toID';";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll();

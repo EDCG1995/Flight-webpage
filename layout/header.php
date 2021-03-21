@@ -12,8 +12,8 @@
     </p>
 
     <header class ="header"> 
-    <div class="logo"> 
-    	<img src="../images/Logo.png"> 
+    <div class="logo"><a href="../index.php"> 
+        <img src="../images/Logo.png"></a> 
 	</div>
 
     <div class="header_title">About Us</div>
