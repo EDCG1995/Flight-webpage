@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'):
 endif;
 
 
-if($_SERVER['REQUEST_METHOD'] == 'GET'){
+if($_SERVER['REQUEST_METHOD'] == 'GET'):
 ?>
 <div class="container">
     <div class="row">
@@ -105,6 +105,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 </div>
 
 <?php
-}
+endif;
 require 'layout/footer.php';
 ?>

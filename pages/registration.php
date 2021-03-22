@@ -4,7 +4,7 @@ require '../systems/log/account.php';
 require '../systems/log/user.php';
 require '../lib/functions.php';
 
- if($_SERVER['REQUEST_METHOD'] == 'POST'){ //When user presses the add button
+ if($_SERVER['REQUEST_METHOD'] == 'POST'): //When user presses the add button
         //variable declaration
     $username;
     $email;
@@ -36,11 +36,11 @@ require '../lib/functions.php';
 ?>
 <h1>Account created Succesfully!</h1>
 <?php
- }
+ endif;
 
 
 
-if($_SERVER['REQUEST_METHOD'] == 'GET'){
+if($_SERVER['REQUEST_METHOD'] == 'GET'):
 ?>
 <div class="container">
     <div class="row">
@@ -97,6 +97,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
 
 <?php
-}
+endif;
 require '../layout/footer.php';
 ?>
