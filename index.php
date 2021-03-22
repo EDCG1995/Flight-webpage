@@ -3,7 +3,7 @@ require 'layout/header.php';
 require 'lib/functions.php';
 require 'systems/booking/trip.php';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if($_SERVER['REQUEST_METHOD'] == 'POST'):
     $fromID;
     $toID;
     $date;
@@ -17,15 +17,41 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     isset($_POST['tickets'])? $tickets = $_POST['tickets'] : $tickets='';
     
     $lookTrip = new Trip($fromID, $toID, $date, $class);
-    
-    foreach(){
+    $lookTrip = get_trips($lookTrip->fromID, $lookTrip->toID);
 ?>
 <!--POST HTML WRITTEN HERE-->
-
+<h1>Select flight!</h1><br>
+<table  style="width:700px">
+    <tr>
+        <th>Select an option</th>
+        <th>From</th>
+        <th>Destination</th>
+        <th>Airline</th>
+        <th>Flight Class</th>
+        <th>Total price for <?php echo $tickets;?> tickets</th>
+    </tr>
+    <form action="/pages/paypage.php" method="get">
 
 <?php
-    }
-}
+    foreach($lookTrip as $index=>$trip):
+?>
+<!--POST HTML WRITTEN HERE-->
+    <tr style="width:500px">
+
+        <th><input type="radio" id="<?php echo $index;?>" name="selection" 
+                   value="<?php echo $index;?> <?php echo $trip{'from_city'}; ?> <?php echo $trip{'to_city'}; ?> <?php echo $trip{'airline'};?> <?php echo $trip{'class'};?> <?php echo $tickets;?> <?php echo $trip{'price'}?>" ></th>
+        <th><?php echo $trip{'from_city'};?></th>
+        <th><?php echo $trip{'to_city'};?></th>
+        <th><?php echo $trip{'airline'};?></th>
+        <th><?php echo $trip{'class'};?></th>
+        <th>€<?php echo $trip{'price'} * $tickets;?></th>
+    </tr>
+    <?php endforeach; ?>
+        <input type="submit">
+    </form>
+</table>
+<?php
+endif;
 
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -63,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
                         </select>
                     </th>
                     <th class="form-group">
-                    <input type="number" name="ticketAmount" id="ticketAmount" min="1" max="9" class="form-control">
+                    <input type="number" name="tickets" id="tickets" min="1" max="9" class="form-control">
                     </th>
                 </tr>
                 <tr>
