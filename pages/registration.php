@@ -50,40 +50,40 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'):
             <form action="registration.php" method="POST">
                 <div class="form-group">
                     <label for="Username" class="control-label">Username</label>
-                    <input type="text" name="username" id="username" class="form-control"/>
+                    <input type="text" name="username" id="username" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="email" class="control-label">E-mail</label>
-                    <input type="text" name="email" id="email" class="form-control"/>
+                    <input type="text" name="email" id="email" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="password" class="control-label">Password</label>
-                    <input type="text" name="password" id="password" class="form-control"/>
+                    <input type="text" name="password" id="password" class="form-control" required >
                 </div><br>
                 <h2>Finishing touches! Please enter the next fields to create an account!</h2>
                 <div class="form-group">
                     <label for="name" class="control-label">Name</label>
-                    <input type="text" name="name" id="name" class="form-control"/>
+                    <input type="text" name="name" id="name" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="lastname" class="control-label">Last Name</label>
-                    <input type="text" name="lastname" id="lastname" class="form-control"/>
+                    <input type="text" name="lastname" id="lastname" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="address" class="control-label">Address</label>
-                    <input type="text" name="address" id="address" class="form-control"/>
+                    <input type="text" name="address" id="address" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="country" class="control-label">Country</label>
-                    <input type="text" name="country" id="country" class="form-control"/>
+                    <input type="text" name="country" id="country" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="passport" class="control-label">Passport</label>
-                    <input type="text" name="passport" id="passport" class="form-control"/>
+                    <input type="text" name="passport" id="passport" class="form-control" required >
                 </div>
                 <div class="form-group">
                     <label for="zip" class="control-label">Zip Code</label>
-                    <input type="text" name="zip" id="zip" class="form-control"/>
+                    <input type="text" name="zip" id="zip" class="form-control" required >
                 </div>
               
                 <button type="submit" class="btn btn-primary">
